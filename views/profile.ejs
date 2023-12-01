@@ -1,0 +1,35 @@
+ <%- include('header')%>
+ <%- include('nav')%>
+    <h1>👋<%= admin.username%></h1>
+
+    <hr />
+    <h2>Sum: <%= expenses.reduce((ac,cv) => ac+cv.amount, 0)%></h2>
+    <br>
+    <div class="show">
+    <form action="/filter">
+        <select name="key" id="">
+            <option value="amount">Amount</option>
+            <option value="remark">Remark</option>
+            <option value="category">Category</option>
+            <option value="paymentmode">Payment Mode</option>
+            <option value="Date">Date</option>
+        </select>
+        <input type="text" name="value" placeholder="enter search term" />
+        <br>
+        <button>Filter</button>
+    </form>
+
+       
+        <button class="one"><a href="/datashow">Show Data</a></button>
+        </div>
+
+        <% expenses.forEach(function(val){%>
+            Amount : <%= val.amount%> <br>
+            Remark : <%= val.remark%> <br>
+            Category : <%= val.category%> <br>
+            Paymentmode : <%= val.paymentmode%> <br>
+            Date : <%= val.createdAt%>
+       <%- include('footer')%>
+ 
+   <%})%>
+

@@ -1,0 +1,27 @@
+
+ <%- include("header")%>
+ <%- include("navbar")%>
+
+ <div class="add">
+  <h1 class="exp1">Update Expense</h1>
+  <div class="expense">
+ <form action="/update/<%= expense.id %>" method="post">
+    
+   <input value="<%= expense.amount %>" type="number" name="amount" placeholder="Amount">
+   <br><br>
+   <input value="<%= expense.remark %>" type="text" name="remark" placeholder="Remark">
+   <br><br>
+   <input value="<%= expense.category %>" type="text" name="category" placeholder="Category">
+   <br><br>
+   <input value="<%= expense.paymentmode %>" type="text" name="paymentmode" placeholder="PaymentMode">
+   <br><br>
+   <button>Update</button>
+ </form>
+</div>
+
+</div>
+ <%- include("footer")%>
+ 
+
+
+ 

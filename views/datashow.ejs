@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="/stylesheets/navbar.css">
+</head>
+<body>
+     <div class="nav2">
+          <a href="/">Home</a>
+          <a href="/signup">Signup</a>
+          <a href="/createexpense">Add New Expense</a>
+          <a href="/reset">Reset</a>
+          <!-- <a href="/filter">Filter</a> -->
+          </div>
+
+     <h1>👋<%= admin.username%></h1>
+<br>
+<hr>
+<!-- <h2>Sum: <%= expenses.reduce((ac,cv) => ac+cv.amount, 0)%></h2> -->
+<% expenses.forEach(function(val){%>
+     Amount : <%= val.amount%> <br>
+     Remark : <%= val.remark%> <br>
+     Category : <%= val.category%> <br>
+     Paymentmode : <%= val.paymentmode%> <br>
+     Date : <%= val.createdAt%>
+     <br><br>
+     <div class="link">
+     <button><a href="/delete/<%= val.id%>">Delete</a></button>
+     <button><a href="/update/<%= val.id%>">Update</a></button>
+     </div>
+     <hr>
+
+<%})%>
+</body>
+</html>
+
